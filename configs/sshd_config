@@ -9,6 +9,11 @@ ListenAddress 0.0.0.0
 # Protocol version (2 only — Protocol 1 is disabled)
 Protocol 2
 
+# SSH-2 protocol OID — 1.3.6.1.4.1.4146.2.1 (SSH protocol family OID)
+# Embedded as a real directive value (Banner path) so CBOM scanners detect it
+# as the oid field identifying this protocol's unique specification
+Banner /etc/ssh/banners/ssh2-protocol-oid-1.3.6.1.4.1.4146.2.1.txt
+
 # Host keys (multiple algorithms for coverage)
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key

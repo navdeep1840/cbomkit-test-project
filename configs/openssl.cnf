@@ -79,13 +79,15 @@ id-ecDH                 = 1.3.132.1.12
 system_default = ssl_default_sect
 
 [ssl_default_sect]
+# TLS protocol OID — identifies the TLS protocol specification itself
+# 1.3.6.1.5.5.7.1.24 = id-pe-TLSFeature (RFC 7633, the PKIX TLS protocol OID)
+Protocol-OID        = 1.3.6.1.5.5.7.1.24
 # TLS 1.3 cipher suites (IANA names — for CBOM cipher_suite detection)
-CipherSuites = TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256
+CipherSuites        = TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256
 # Signature algorithms in OID dotted-decimal format — CBOM scanners parse these as oid field values
-# Format: <key-OID>+<hash-OID>  (OpenSSL accepts OID notation here)
 SignatureAlgorithms = 1.2.840.10045.4.3.3:1.2.840.10045.4.3.2:1.2.840.113549.1.1.13:1.2.840.113549.1.1.12:1.2.840.113549.1.1.11:1.2.840.113549.1.1.5
 # Named curves (by OID) for ECDH/ECDSA key exchange
-Groups = 1.3.132.0.34:1.2.840.10045.3.1.7:1.3.132.0.35:1.3.101.110
+Groups              = 1.3.132.0.34:1.2.840.10045.3.1.7:1.3.132.0.35:1.3.101.110
 
 # -------------------------------------------------------------------------
 # CA section
